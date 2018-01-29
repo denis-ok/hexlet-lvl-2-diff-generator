@@ -1,0 +1,47 @@
+{
+  "name": "strelkov-gendiff",
+  "version": "0.0.1",
+  "description": "hexlet js project level 2",
+  "main": "dist/bin/gendiff.js",
+  "bin": {
+    "gendiff": "dist/bin/gendiff.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "eslint": "eslint",
+    "babel-node": "babel-node",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "Denis Strelkov",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denis-ok/project-lvl2-s185.git"
+  },
+  "bugs": {
+    "url": "https://github.com/denis-ok/project-lvl2-s185/issues"
+  },
+  "homepage": "https://github.com/denis-ok/project-lvl2-s185#readme",
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-preset-env": "*",
+    "babel-preset-stage-0": "*",
+    "eslint": "*",
+    "eslint-config-airbnb-base": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-jest": "*",
+    "jest": "*",
+    "jest-cli": "*"
+  },
+  "dependencies": {
+    "commander": "^2.13.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
