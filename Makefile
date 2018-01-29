@@ -17,6 +17,9 @@ test:
 lint:
 	npm run eslint src/
 
+list:
+	npm list -g --depth=0
+
 link:
 	npm run build
 	npm link
@@ -36,11 +39,11 @@ relink:
 
 install-global:
 	npm list -g --depth=0
-	npm install -g project-lvl2-s185
+	npm install -g strelkov-gendiff
 	npm list -g --depth=0
 
 uninstall-global:
 	npm list -g --depth=0
-	npm uninstall -g project-lvl2-s185
+	npm uninstall -g strelkov-gendiff
 	npm list -g --depth=0
 
