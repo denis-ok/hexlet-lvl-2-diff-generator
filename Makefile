@@ -86,12 +86,12 @@ uninstall-global:
 	npm list -g --depth=0
 
 json-start-global-1:
-	npm run babel-node -- src/bin/gendiff.js \
+	gendiff \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/1-before.json \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/1-after.json
 
 json-start-global-2:
-	npm run babel-node -- src/bin/gendiff.js \
+	gendiff \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/2-before.json \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/2-after.json
 
