@@ -22,13 +22,9 @@ class Config {
   }
 }
 
-const files = (filepath1, filepath2) => [new Config(filepath1), new Config(filepath2)];
-
-
 const buildString = (obj1, obj2) => {
   const keys1 = new Set(Object.keys(obj1));
   const keys2 = new Set(Object.keys(obj2));
-
   const allKeys = Object.keys({ ...obj1, ...obj2 });
 
   const indentSame = '    ';
@@ -67,7 +63,8 @@ const buildString = (obj1, obj2) => {
 };
 
 const genDiff = (filepath1, filepath2) => {
-  const [config1, config2] = files(filepath1, filepath2);
+  const config1 = new Config(filepath1);
+  const config2 = new Config(filepath2);
   const jsObj1 = config1.parse();
   const jsObj2 = config2.parse();
   return buildString(jsObj1, jsObj2);
