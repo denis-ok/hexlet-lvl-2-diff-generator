@@ -1,6 +1,6 @@
 {
   "name": "strelkov-gendiff",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "hexlet js project level 2",
   "main": "dist/index.js",
   "bin": {
