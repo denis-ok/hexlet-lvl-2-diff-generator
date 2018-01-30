@@ -1,6 +1,6 @@
 {
   "name": "strelkov-gendiff",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "hexlet js project level 2",
   "main": "dist/index.js",
   "bin": {
@@ -39,7 +39,8 @@
     "jest-cli": "*"
   },
   "dependencies": {
-    "commander": "^2.13.0"
+    "commander": "^2.13.0",
+    "js-yaml": "^3.10.0"
   },
   "jest": {
     "testEnvironment": "node"

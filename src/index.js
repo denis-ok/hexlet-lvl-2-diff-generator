@@ -1,45 +1,76 @@
 import fs from 'fs';
+import path from 'path';
+import yaml from 'js-yaml';
 
-const jsonDiff = (path1, path2) => {
-  const obj1 = JSON.parse(fs.readFileSync(path1));
+class Config {
+  constructor(filepath) {
+    this.path = filepath;
+    this.type = path.parse(filepath).ext;
+    this.data = fs.readFileSync(this.path, 'utf8');
+  }
+
+  parse() {
+    if (this.type === '.json') {
+      return JSON.parse(this.data);
+    }
+
+    if (this.type === '.yaml' || this.type === '.yml') {
+      return yaml.load(this.data);
+    }
+
+    return false;
+  }
+}
+
+const files = (filepath1, filepath2) => [new Config(filepath1), new Config(filepath2)];
+
+
+const buildString = (obj1, obj2) => {
   const keys1 = new Set(Object.keys(obj1));
-
-  const obj2 = JSON.parse(fs.readFileSync(path2));
   const keys2 = new Set(Object.keys(obj2));
 
   const allKeys = Object.keys({ ...obj1, ...obj2 });
 
-  const areEmpty = allKeys.length === 0;
+  const indentSame = '    ';
+  const indentRemoved = '  - ';
+  const indentAdded = '  + ';
+  const newline = '\n';
 
-  const generateString = allKeys.reduce((acc, key, index) => {
-    const indentSame = '    ';
-    const indentRemoved = '  - ';
-    const indentAdded = '  + ';
-    const newline = '\n';
-    const end = '\n}';
-
-    const isEnd = index === allKeys.length - 1;
-
-    if (keys1.has(key) && !keys2.has(key)) {
-      const line = `${newline}${indentRemoved}${key}: ${obj1[key]}`;
-      return isEnd ? `${acc}${line}${end}` : `${acc}${line}`;
+  const iter = (index, acc, keys) => {
+    if (index > allKeys.length - 1) {
+      return `${acc}\n}`;
     }
 
-    if (!keys1.has(key) && keys2.has(key)) {
-      const line = `${newline}${indentAdded}${key}: ${obj2[key]}`;
-      return isEnd ? `${acc}${line}${end}` : `${acc}${line}`;
+    const [current, ...rest] = keys;
+    const nextIter = lineForAcc => iter(index + 1, `${acc}${newline}${lineForAcc}`, rest);
+
+    if (keys1.has(current) && !keys2.has(current)) {
+      const line = `${indentRemoved}${current}: ${obj1[current]}`;
+      return nextIter(line);
     }
 
-    if (obj1[key] === obj2[key]) {
-      const line = `${newline}${indentSame}${key}: ${obj2[key]}`;
-      return isEnd ? `${acc}${line}${end}` : `${acc}${line}`;
+    if (!keys1.has(current) && keys2.has(current)) {
+      const line = `${indentAdded}${current}: ${obj2[current]}`;
+      return nextIter(line);
     }
 
-    const line = `${newline}${indentAdded}${key}: ${obj2[key]}${newline}${indentRemoved}${key}: ${obj1[key]}`;
-    return isEnd ? `${acc}${line}${end}` : `${acc}${line}`;
-  }, '{');
+    if (obj1[current] === obj2[current]) {
+      const line = `${indentSame}${current}: ${obj2[current]}`;
+      return nextIter(line);
+    }
 
-  return areEmpty ? '{}' : generateString;
+    const line = `${indentAdded}${current}: ${obj2[current]}${newline}${indentRemoved}${current}: ${obj1[current]}`;
+    return nextIter(line);
+  };
+
+  return allKeys.length === 0 ? '{}' : iter(0, '{', allKeys);
 };
 
-export default jsonDiff;
+const genDiff = (filepath1, filepath2) => {
+  const [config1, config2] = files(filepath1, filepath2);
+  const jsObj1 = config1.parse();
+  const jsObj2 = config2.parse();
+  return buildString(jsObj1, jsObj2);
+};
+
+export default genDiff;

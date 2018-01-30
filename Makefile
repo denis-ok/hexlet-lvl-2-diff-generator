@@ -7,30 +7,40 @@ start:
 start-help:
 	npm run babel-node -- src/bin/gendiff.js -h
 
-start-1:
+json-start-1:
 	npm run babel-node -- src/bin/gendiff.js \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/1-before.json \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/1-after.json
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/1-before.json \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/1-after.json
 
-start-2:
+json-start-2:
 	npm run babel-node -- src/bin/gendiff.js \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/2-before.json \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/2-after.json
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/2-before.json \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/2-after.json
 
-start-3-1:
+json-start-3-1:
 	npm run babel-node -- src/bin/gendiff.js \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/3-before.json \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/3-after.json
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/3-before.json \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/3-after.json
 
-start-3-2:
+json-start-3-2:
 	npm run babel-node -- src/bin/gendiff.js \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/3-after.json \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/3-before.json
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/3-after.json \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/3-before.json
 
-start-4:
+json-start-4:
 	npm run babel-node -- src/bin/gendiff.js \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/4-before.json \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/4-after.json
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/4-before.json \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/4-after.json
+
+yaml-start-1:
+	npm run babel-node -- src/bin/gendiff.js \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/yaml/1-before.yml \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/yaml/1-after.yml
+
+yaml-start-2:
+	npm run babel-node -- src/bin/gendiff.js \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/yaml/2-before.yml \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/yaml/2-after.yml
 
 build:
 	rm -rf dist
@@ -75,28 +85,23 @@ uninstall-global:
 	npm uninstall -g strelkov-gendiff
 	npm list -g --depth=0
 
-start-global-1:
-	gendiff \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/1-before.json \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/1-after.json
+json-start-global-1:
+	npm run babel-node -- src/bin/gendiff.js \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/1-before.json \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/1-after.json
 
-start-global-2:
-	gendiff \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/2-before.json \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/2-after.json
+json-start-global-2:
+	npm run babel-node -- src/bin/gendiff.js \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/2-before.json \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/2-after.json
 
-start-global-3-1:
+yaml-start-global-1:
 	gendiff \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/3-before.json \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/3-after.json
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/yaml/1-before.yml \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/yaml/1-after.yml
 
-start-global-3-2:
+yaml-start-global-2:
 	gendiff \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/3-after.json \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/3-before.json
-
-start-global-4:
-	gendiff \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/4-before.json \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/4-after.json
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/yaml/2-before.yml \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/yaml/2-after.yml
 
