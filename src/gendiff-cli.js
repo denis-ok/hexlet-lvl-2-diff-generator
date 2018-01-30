@@ -3,7 +3,7 @@ import jsonDiff from './';
 
 
 program
-  .version('0.0.1')
+  .version('0.1.0')
   .description('This program take two config files as arguments and show difference')
   .option('-f, --format [type]', 'Output file format')
   .arguments('<file1> <file2>')
