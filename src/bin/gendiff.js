@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-import launch from '../index';
+import launch from '../gendiff-cli';
 
 launch();
-console.log('This is gendiff CLI utility.');
 
