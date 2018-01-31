@@ -1,0 +1,10 @@
+{
+    brand: Apple
+  + device: iPhone 6
+  - device: ipad Air 2
+  + memory: 32gb
+  - memory: 64gb
+  - size: 9.7
+  + discontinued: true
+  + origin: china
+}
