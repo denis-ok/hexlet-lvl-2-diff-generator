@@ -1,14 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import yaml from 'js-yaml';
-import ini from 'ini';
+import parsers from './parsers';
 import diffBuilder from './diff-builder';
-
-const parsers = {
-  json: JSON.parse,
-  yml: yaml.load,
-  ini: ini.parse,
-};
 
 
 const getData = filepath => fs.readFileSync(filepath, 'utf8');

@@ -60,7 +60,10 @@ publish:
 	npm publish
 
 test:
-	npm test	
+	npm test
+
+test-coverage:
+	npm test -- --coverage
 
 lint:
 	npm run eslint src/
