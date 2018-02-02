@@ -144,7 +144,7 @@ ini-start-global-2:
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/ini/1-deep-after.ini
 
 
-experiment:
+local-run:
 	make json-start-1-default
 	make json-start-2-default
 	make json-start-1-plain

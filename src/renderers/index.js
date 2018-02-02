@@ -1,11 +1,11 @@
 import buildAst from '../ast-builder';
 import defaultR from './default';
-// import plainR from './plain';
+import plainR from './plain';
 
 
 const renderers = {
   default: defaultR,
-  // plane: plainR,
+  plain: plainR,
 };
 
 const getRenderer = format => renderers[format];

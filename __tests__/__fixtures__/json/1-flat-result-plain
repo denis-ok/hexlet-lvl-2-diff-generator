@@ -1,0 +1,7 @@
+Property 'brand' was updated from 'Gibson' to 'Schecter'
+Property 'model' was updated from 'Explorer' to 'KM-7'
+Property 'origin' was updated from 'USA' to 'Korea'
+Property 'year' was removed
+Property 'strings' was updated from '6' to '7'
+Property 'scale' was updated from '24.75' to '26.5'
+Property 'pickups' was added with value: 'humbucker'
