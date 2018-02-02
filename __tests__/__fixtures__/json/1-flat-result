@@ -5,11 +5,11 @@
   - model: Explorer
   + origin: Korea
   - origin: USA
-  + year: 2016
   - year: 1999
   + strings: 7
   - strings: 6
   + scale: 26.5
   - scale: 24.75
     left-handed: false
+  + pickups: humbucker
 }
