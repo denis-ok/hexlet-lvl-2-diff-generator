@@ -32,6 +32,14 @@ json-start-4:
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/4-before.json \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/4-after.json
 
+json-start-deep:
+	npm run babel-node -- src/bin/gendiff.js \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/5-before.json \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/5-after.json
+
+
+
+
 yaml-start-1:
 	npm run babel-node -- src/bin/gendiff.js \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/yaml/1-before.yml \
@@ -42,6 +50,14 @@ yaml-start-2:
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/yaml/2-before.yml \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/yaml/2-after.yml
 
+yaml-start-deep:
+	npm run babel-node -- src/bin/gendiff.js \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/yaml/3-before.yml \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/yaml/3-after.yml
+
+
+
+
 ini-start-1:
 	npm run babel-node -- src/bin/gendiff.js \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/ini/1-before.ini \
@@ -51,6 +67,12 @@ ini-start-2:
 	npm run babel-node -- src/bin/gendiff.js \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/ini/empty.ini \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/ini/1-before.ini
+
+ini-start-deep:
+	npm run babel-node -- src/bin/gendiff.js \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/ini/4-after.ini \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/ini/4-before.ini
+
 
 build:
 	rm -rf dist
@@ -108,6 +130,14 @@ json-start-global-2:
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/2-before.json \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/2-after.json
 
+json-start-global-deep:
+	gendiff \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/5-before.json \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/5-after.json
+
+
+
+
 yaml-start-global-1:
 	gendiff \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/yaml/1-before.yml \
@@ -118,6 +148,14 @@ yaml-start-global-2:
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/yaml/2-before.yml \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/yaml/2-after.yml
 
+yaml-start-global-deep:
+	gendiff \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/yaml/3-before.yml \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/yaml/3-after.yml
+
+
+	
+
 ini-start-global-1:
 	gendiff \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/ini/1-before.ini \
@@ -127,3 +165,8 @@ ini-start-global-2:
 	gendiff \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/ini/empty.ini \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/ini/1-before.ini
+
+ini-start-global-deep:
+	gendiff \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/ini/4-before.ini \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/ini/4-after.ini

@@ -34,6 +34,13 @@ describe('genDiff test', () => {
   test('test 4 - both are empty', () => {
     const path1 = path.join(__dirname, '/__fixtures__/json/4-before.json');
     const path2 = path.join(__dirname, '/__fixtures__/json/4-after.json');
-    expect(genDiff(path1, path2)).toBe('{}');
+    expect(genDiff(path1, path2)).toBe('{\n}');
+  });
+
+  test('test 5 - deep test', () => {
+    const path1 = path.join(__dirname, '/__fixtures__/json/5-before.json');
+    const path2 = path.join(__dirname, '/__fixtures__/json/5-after.json');
+    const result = fs.readFileSync(path.join(__dirname, '/__fixtures__/json/5-result'), 'utf8');
+    expect(genDiff(path1, path2)).toBe(result);
   });
 });

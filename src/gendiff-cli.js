@@ -3,7 +3,7 @@ import genDiff from './';
 
 
 program
-  .version('0.3.0')
+  .version('0.4.0')
   .description('This program take two config files as arguments and show difference')
   .option('-f, --format [type]', 'Output file format')
   .arguments('<file1> <file2>')

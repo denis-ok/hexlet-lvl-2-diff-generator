@@ -1,3 +1,4 @@
+import path from 'path';
 import yaml from 'js-yaml';
 import ini from 'ini';
 
@@ -7,4 +8,8 @@ const parsers = {
   ini: ini.parse,
 };
 
-export default parsers;
+const getExt = filepath => path.extname(filepath).slice(1);
+const getParser = filepath => parsers[getExt(filepath)];
+const parse = (filepath, data) => getParser(filepath)(data);
+
+export default parse;
