@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import buildAst from './ast-builder';
+import buildAst from '../ast-builder';
 
 
 const indent = '  ';

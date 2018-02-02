@@ -32,13 +32,17 @@ json-start-4:
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/4-before.json \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/4-after.json
 
-json-start-deep:
+json-start-deep-default:
 	npm run babel-node -- src/bin/gendiff.js \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/5-before.json \
-	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/5-after.json
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/5-after.json \
+	-f default
 
-
-
+json-start-deep-plain:
+	npm run babel-node -- src/bin/gendiff.js \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/5-before.json \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/5-after.json \
+	-f plain
 
 yaml-start-1:
 	npm run babel-node -- src/bin/gendiff.js \
@@ -154,7 +158,7 @@ yaml-start-global-deep:
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/yaml/3-after.yml
 
 
-	
+
 
 ini-start-global-1:
 	gendiff \
