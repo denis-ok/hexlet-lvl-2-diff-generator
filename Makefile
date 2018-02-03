@@ -81,6 +81,18 @@ json-start-deep-plain:
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/1-deep-before.json \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/1-deep-after.json
 
+json-start-flat-json:
+	npm run babel-node -- src/bin/gendiff.js -f json \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/1-flat-before.json \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/1-flat-after.json \
+
+json-start-deep-json:
+	npm run babel-node -- src/bin/gendiff.js -f json \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/1-deep-before.json \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/1-deep-after.json
+
+
+
 
 yaml-start-1:
 	npm run babel-node -- src/bin/gendiff.js \
@@ -125,6 +137,16 @@ json-start-global-deep-plain:
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/1-deep-before.json \
 	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/1-deep-after.json
 
+json-start-global-flat-json:
+	gendiff -f json \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/1-flat-before.json \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/1-flat-after.json
+
+json-start-global-deep-json:
+	gendiff -f json \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/1-deep-before.json \
+	/home/denis/Projects/project-lvl2-s185/__tests__/__fixtures__/json/1-deep-after.json
+
 
 
 yaml-start-global-1:
@@ -151,14 +173,17 @@ ini-start-global-2:
 
 
 local-run:
-	make json-start-1-default
-	make json-start-2-default
-	make json-start-1-plain
-	make json-start-2-plain
+	make json-start-flat-default
+	make json-start-deep-default
+	make json-start-flat-plain
+	make json-start-deep-plain
+	make json-start-flat-json
+	make json-start-deep-json
 
 global-run:
-	make json-start-global-1-default
-	make json-start-global-2-default
-	make json-start-global-1-plain
-	make json-start-global-2-plain
-
+	make json-start-global-flat-default
+	make json-start-global-deep-default
+	make json-start-global-flat-plain
+	make json-start-global-deep-plain
+	make json-start-global-flat-json
+	make json-start-global-deep-json
