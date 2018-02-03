@@ -2,29 +2,54 @@
 import _ from 'lodash';
 
 
-const getAllkeys = (o1, o2) => Object.keys({ ...o1, ...o2 });
+const getAllkeys = (obj1, obj2) => _.union(_.keys(obj1), _.keys(obj2));
+
 const bothObjects = (a, b) => _.isObject(a) && _.isObject(b);
 
-const buildKey = (name, type, valueOld, valueNew, valueDeep) => ({
-  name, type, valueOld, valueNew, valueDeep,
-});
-
-
-const buildKeyInfo = (key, value1, value2) => {
+const buildKeyInfo = (keyName, value1, value2) => {
   if (bothObjects(value1, value2)) {
-    return buildKey(key, 'object', null, null, buildAst(value1, value2));
+    return {
+      name: keyName,
+      type: 'object',
+      valueOld: null,
+      valueNew: null,
+      valueDeep: buildAst(value1, value2),
+    };
   }
   else if (value1 === value2) {
-    return buildKey(key, 'unmodified', value1, value2, null);
+    return {
+      name: keyName,
+      type: 'unmodified',
+      valueOld: value1,
+      valueNew: value2,
+      valueDeep: null,
+    };
   }
   else if (!value1) {
-    return buildKey(key, 'added', null, value2, null);
+    return {
+      name: keyName,
+      type: 'added',
+      valueOld: null,
+      valueNew: value2,
+      valueDeep: null,
+    };
   }
   else if (!value2) {
-    return buildKey(key, 'removed', value1, null, null);
+    return {
+      name: keyName,
+      type: 'removed',
+      valueOld: value1,
+      valueNew: null,
+      valueDeep: null,
+    };
   }
-
-  return buildKey(key, 'modified', value1, value2, null);
+  return {
+    name: keyName,
+    type: 'modified',
+    valueOld: value1,
+    valueNew: value2,
+    valueDeep: null,
+  };
 };
 
 
