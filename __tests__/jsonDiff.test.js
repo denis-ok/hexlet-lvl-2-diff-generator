@@ -30,4 +30,18 @@ describe('genDiff flat test', () => {
     const result = fs.readFileSync(path.join(__dirname, '/__fixtures__/json/1-deep-result-plain'), 'utf8');
     expect(genDiff(path1, path2, 'plain')).toBe(result);
   });
+
+  test('test 5 - flat JSON', () => {
+    const path1 = path.join(__dirname, '/__fixtures__/json/1-flat-before.json');
+    const path2 = path.join(__dirname, '/__fixtures__/json/1-flat-after.json');
+    const result = fs.readFileSync(path.join(__dirname, '/__fixtures__/json/1-flat-result-json'), 'utf8');
+    expect(genDiff(path1, path2, 'json')).toBe(result);
+  });
+
+  test('test 6 - deep JSON', () => {
+    const path1 = path.join(__dirname, '/__fixtures__/json/1-deep-before.json');
+    const path2 = path.join(__dirname, '/__fixtures__/json/1-deep-after.json');
+    const result = fs.readFileSync(path.join(__dirname, '/__fixtures__/json/1-deep-result-json'), 'utf8');
+    expect(genDiff(path1, path2, 'json')).toBe(result);
+  });
 });

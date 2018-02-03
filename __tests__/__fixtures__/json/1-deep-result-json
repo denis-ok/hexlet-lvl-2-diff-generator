@@ -1,0 +1,109 @@
+[
+  {
+    "name": "common",
+    "type": "object",
+    "valueOld": null,
+    "valueNew": null,
+    "valueDeep": [
+      {
+        "name": "setting1",
+        "type": "unmodified",
+        "valueOld": "Value 1",
+        "valueNew": "Value 1",
+        "valueDeep": null
+      },
+      {
+        "name": "setting2",
+        "type": "removed",
+        "valueOld": "200",
+        "valueNew": null,
+        "valueDeep": null
+      },
+      {
+        "name": "setting3",
+        "type": "unmodified",
+        "valueOld": true,
+        "valueNew": true,
+        "valueDeep": null
+      },
+      {
+        "name": "setting6",
+        "type": "object",
+        "valueOld": null,
+        "valueNew": null,
+        "valueDeep": [
+          {
+            "name": "key",
+            "type": "unmodified",
+            "valueOld": "value",
+            "valueNew": "value",
+            "valueDeep": null
+          },
+          {
+            "name": "ops",
+            "type": "added",
+            "valueOld": null,
+            "valueNew": "vops",
+            "valueDeep": null
+          }
+        ]
+      },
+      {
+        "name": "setting4",
+        "type": "added",
+        "valueOld": null,
+        "valueNew": "blah blah",
+        "valueDeep": null
+      },
+      {
+        "name": "setting5",
+        "type": "added",
+        "valueOld": null,
+        "valueNew": {
+          "key5": "value5"
+        },
+        "valueDeep": null
+      }
+    ]
+  },
+  {
+    "name": "group1",
+    "type": "object",
+    "valueOld": null,
+    "valueNew": null,
+    "valueDeep": [
+      {
+        "name": "baz",
+        "type": "modified",
+        "valueOld": "bas",
+        "valueNew": "bars",
+        "valueDeep": null
+      },
+      {
+        "name": "foo",
+        "type": "unmodified",
+        "valueOld": "bar",
+        "valueNew": "bar",
+        "valueDeep": null
+      }
+    ]
+  },
+  {
+    "name": "group2",
+    "type": "removed",
+    "valueOld": {
+      "abc": "12345"
+    },
+    "valueNew": null,
+    "valueDeep": null
+  },
+  {
+    "name": "group3",
+    "type": "added",
+    "valueOld": null,
+    "valueNew": {
+      "fee": "100500"
+    },
+    "valueDeep": null
+  }
+]

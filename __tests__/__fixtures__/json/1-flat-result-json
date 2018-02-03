@@ -1,0 +1,58 @@
+[
+  {
+    "name": "brand",
+    "type": "modified",
+    "valueOld": "Gibson",
+    "valueNew": "Schecter",
+    "valueDeep": null
+  },
+  {
+    "name": "model",
+    "type": "modified",
+    "valueOld": "Explorer",
+    "valueNew": "KM-7",
+    "valueDeep": null
+  },
+  {
+    "name": "origin",
+    "type": "modified",
+    "valueOld": "USA",
+    "valueNew": "Korea",
+    "valueDeep": null
+  },
+  {
+    "name": "year",
+    "type": "removed",
+    "valueOld": 1999,
+    "valueNew": null,
+    "valueDeep": null
+  },
+  {
+    "name": "strings",
+    "type": "modified",
+    "valueOld": 6,
+    "valueNew": 7,
+    "valueDeep": null
+  },
+  {
+    "name": "scale",
+    "type": "modified",
+    "valueOld": 24.75,
+    "valueNew": 26.5,
+    "valueDeep": null
+  },
+  {
+    "name": "left-handed",
+    "type": "unmodified",
+    "valueOld": false,
+    "valueNew": false,
+    "valueDeep": null
+  },
+  {
+    "name": "pickups",
+    "type": "added",
+    "valueOld": null,
+    "valueNew": "humbucker",
+    "valueDeep": null
+  }
+]
