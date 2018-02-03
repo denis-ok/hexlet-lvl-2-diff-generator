@@ -1,6 +1,6 @@
 {
   "name": "strelkov-gendiff",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "hexlet js project level 2",
   "main": "dist/index.js",
   "bin": {
@@ -31,7 +31,7 @@
     "babel-core": "*",
     "babel-preset-env": "*",
     "babel-preset-stage-0": "*",
-    "eslint": "*",
+    "eslint": "^4.17.0",
     "eslint-config-airbnb-base": "*",
     "eslint-plugin-import": "*",
     "eslint-plugin-jest": "*",
