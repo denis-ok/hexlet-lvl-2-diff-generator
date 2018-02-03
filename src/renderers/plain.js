@@ -34,7 +34,7 @@ const buildDiffString = (ast, level = '') => {
       unmodified: actionUnmodified,
       added: actionAdded,
       removed: actionRemoved,
-      modifiedDeepObj: actionModifiedDeepObj,
+      object: actionModifiedDeepObj,
     };
 
     const makeAction = actions[type];
