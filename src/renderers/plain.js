@@ -15,7 +15,7 @@ const makeAction = (obj, level) => {
   const { name, type, valueNew, valueOld, valueDeep } = obj;
   const newLevel = level === '' ? name : `${level}.${name}`;
 
-  const actions = {
+  const typeToString = {
     object: () => `${buildDiffString(valueDeep, `${newLevel}`)}`,
 
     unmodified: () => '',
@@ -32,14 +32,14 @@ const makeAction = (obj, level) => {
     },
   };
 
-  const getAction = actions[type];
-  return getAction();
+  const action = typeToString[type];
+  return action();
 };
 
 
 const buildDiffString = (ast, level = '') => {
-  const result = ast.map(obj => makeAction(obj, level));
-  return result.join('');
+  const arrDiff = ast.map(obj => makeAction(obj, level));
+  return arrDiff.join('');
 };
 
 
