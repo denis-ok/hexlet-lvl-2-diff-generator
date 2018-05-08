@@ -1,9 +1,10 @@
 import program from 'commander';
+import { version } from '../package.json';
 import genDiff from './';
 
 
 program
-  .version('0.6.1')
+  .version(version)
   .description('This program take two config files as arguments and show difference')
   .option('-f, --format [type]', 'Output file format')
   .arguments('<file1> <file2>')
